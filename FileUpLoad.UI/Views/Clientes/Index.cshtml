@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cliente>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Listagem de Clientes</h2>
+<div>
+    <a asp-action="Add">Novo</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Foto</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            var foto = string.Empty;
+            if (!string.IsNullOrEmpty(cliente.UrlFoto))
+            {
+                byte[] imageArray = System.IO.File.ReadAllBytes(cliente.UrlFoto);
+                foto = Convert.ToBase64String(imageArray);
+            }
+
+
+            <tr>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Idade</td>
+                <td>@cliente.Sexo</td>
+                <td>@cliente?.UrlFoto</td>
+                <th>
+                    <div>
+                        
+                    </div>
+                </th>
+                <th>
+                    <img src="data:image/jpeg;base64, @foto" />
+                </th>
+            </tr>
+
+        }
+    </tbody>
+</table>

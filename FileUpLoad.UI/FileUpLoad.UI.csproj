@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FileUpLoad.Data\FileUpLoad.Data.csproj" />
+    <ProjectReference Include="..\FileUpLoad.Domain\FileUpLoad.Domain.csproj" />
   </ItemGroup>
 
 </Project>

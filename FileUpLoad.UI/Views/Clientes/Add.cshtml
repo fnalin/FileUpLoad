@@ -1,0 +1,38 @@
+﻿@model Cliente
+
+@{
+    ViewBag.Title = "Add Cliente";
+}
+
+<h2>Novo Cliente</h2>
+
+<form asp-action="Save" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div>
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" >
+    </div>
+
+    <div>
+        <label asp-for="Idade"></label>
+        <input asp-for="Idade">
+    </div>
+
+    <div>
+        <label asp-for="Sexo"></label>
+        <select asp-for="Sexo" asp-items="Html.GetEnumSelectList<Sexo>()">
+            <option selected="selected" value="">Selecione...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Foto</label>
+        <input type="file" name="file" />
+    </div>
+
+    <div>
+        <button>Salvar</button>
+        <a asp-action="Index">Cancelar</a>
+    </div>
+</form>

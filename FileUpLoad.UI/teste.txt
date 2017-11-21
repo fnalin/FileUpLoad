@@ -1,3 +1,0 @@
-https://www.youtube.com/watch?v=yySB7okjXJs
-https://www.youtube.com/watch?v=aaK6px2u8z4
-http://www.stephanybatista.com/2017/11/04/geracao-e-autenticacao-de-token-no-asp-net-core-2-0/
